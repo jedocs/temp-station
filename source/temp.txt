@@ -1,0 +1,119 @@
+		if (hasPacket)
+						 
+									
+							        	{
+								/*		BYTE i;
+									//	RxCount++;
+									//	PrintDigitW(RxCount);
+									//	c("   |     ");
+										PrintChar(RxPacketLen);
+										c(" | ");	
+							        	for(i = 0; i < RxPacketLen; i++)
+							        	{
+							        		PrintChar(RxPacket[i]);
+											c(" ");
+							            }
+										c(" | ");
+										PrintChar(RxPacket[RxPacketLen]);
+										c(" ");
+										PrintChar(RxPacket[RxPacketLen+1]);
+										c(" ");
+										c(" | ");
+										PrintDigitW(rcrc);
+							            c(" ");
+										c(" | ");
+										PrintDigitW(ccrc);
+										hasPacket = FALSE;
+										//RxPrintCount++;
+										nl();
+							            RxPacketLen = 0;	*/
+
+							        	}
+
+
+/*		{
+		ClearDevice();
+		SetFont((void *) &Font13pix);
+	
+		Int2Str(key_str, rcrc, 5);
+		OutTextXY(10,10,key_str);
+	
+		Int2Str(key_str, ccrc, 5);
+		OutTextXY(10,20,key_str);
+
+//		OutTextXY(10,40,"has packet");
+
+			OutTextXY(5,30, RxPacket);
+			TransferToLCD();
+			DelayMs(400);
+			hasPacket = FALSE;
+		}
+*/
+	
+	
+/*
+		//DelayMs(500);
+
+//		Int2Str(key_str, key, 2);
+//		OutTextXY(10,30,key_str);
+
+//		LED=1;
+
+
+TxPacket[0]='P';
+TxPacket[1]='g';
+TxPacket[2]='k';
+TxPacket[3]='b';
+TxPacket[4]='a';
+TxPacket[5]='1';
+TxPacket[6]='2';
+TxPacket[7]='3';
+
+//	Tx(key_str);
+//		LED=0;
+*/		
+		//	Write_DSGPR(0x67,0x7A); //Save state of system prior to deep sleep
+		//	RTCC_configure(); //Configure RTCC as one of sources of wake up
+
+		//**************** configure INT0 with pullups enabled, falling edge *********************************
+		//	CloseINT0();
+		//	ConfigINT0(INT_ENABLE | FALLING_EDGE_INT | INT_PRI_1);
+		//*************** configure deep sleep wake up sources ********************************************
+
+		//	if(GotoDeepSleep()); //This function puts the device into deep sleep
+		//	Check_INT_SRV_Routine(); //Interrupt occured simultaneously while going to deep sleep.Hence service it.
+
+
+/*
+
+void RTCC_configure(void)
+{
+	unsigned int i=0,j=0;
+	
+	RtccInitClock(); //turn on clock source
+	for(i=0;i<4;i++) //Delay for Secondary oscillator to stabilize
+	for(j=0;j<60000;j++);
+	
+	RtccWrOn(); //write enable the rtcc registers
+	RtccTimeDate.f.hour = 9; //Set Date and time
+	RtccTimeDate.f.min = 10;
+	RtccTimeDate.f.sec = 9;
+	RtccTimeDate.f.mday = 18;
+	RtccTimeDate.f.mon = 1;
+	RtccTimeDate.f.year = 8;
+	RtccAlrmTimeDate.f.hour = RtccTimeDate.f.hour;
+	RtccAlrmTimeDate.f.min = RtccTimeDate.f.min ;
+	RtccAlrmTimeDate.f.sec = RtccTimeDate.f.sec + 9;
+	RtccAlrmTimeDate.f.mday = RtccTimeDate.f.mday;
+	RtccAlrmTimeDate.f.mon = RtccTimeDate.f.mon;
+	RtccAlrmTimeDate.f.year = RtccTimeDate.f.year;
+	
+	RtccWriteTimeDate(&RtccTimeDate,1); //write into registers
+	RtccSetAlarmRpt(RTCC_RPT_TEN_SEC,1); //Set the alarm repeat to every 10 seconds
+	RtccSetAlarmRptCount(5,1);
+	RtccWriteAlrmTimeDate(&RtccAlrmTimeDate);
+	
+	mRtccOn(); //enable the rtcc
+	mRtccAlrmEnable(); //enable the rtcc alarm to wake the device up from deep sleep
+}
+*/
